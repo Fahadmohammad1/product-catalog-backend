@@ -1,0 +1,26 @@
+{
+  "name": "product-catalog-backend",
+  "version": "1.0.0",
+  "main": "src/server.ts",
+  "license": "MIT",
+  "scripts": {
+    "start": "ts-node-dev --respawn --transpile-only src/server.ts",
+    "generate": "drizzle-kit generate:pg --schema=./src/db/schema.ts"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.10.0",
+    "@types/pg": "^8.10.9",
+    "drizzle-kit": "^0.20.4",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.3.2"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "drizzle-orm": "^0.29.0",
+    "express": "^4.18.2",
+    "pg": "^8.11.3"
+  }
+}
