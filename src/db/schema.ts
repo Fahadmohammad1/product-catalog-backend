@@ -15,3 +15,10 @@ export const products = pgTable("products", {
   createdAt: timestamp("created_at"),
   updatedAt: timestamp("updated_at"),
 });
+
+export const users = pgTable("users", {
+  id: serial("id").primaryKey(),
+  name: varchar("name", { length: 256 }),
+  email: varchar("email"),
+  avatar: text("avatar"),
+});
