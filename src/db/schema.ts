@@ -1,3 +1,4 @@
+import { sql } from "drizzle-orm";
 import {
   integer,
   pgTable,
@@ -12,8 +13,10 @@ export const products = pgTable("products", {
   name: varchar("name", { length: 256 }),
   description: text("description"),
   price: integer("price"),
-  createdAt: timestamp("created_at"),
-  updatedAt: timestamp("updated_at"),
+  image: text("image"),
+  createdAt: timestamp("created_at")
+    .notNull()
+    .default(sql`now()`),
 });
 
 export const users = pgTable("users", {

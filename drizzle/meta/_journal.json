@@ -22,6 +22,27 @@
       "when": 1701083951797,
       "tag": "0002_chief_apocalypse",
       "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1701088056922,
+      "tag": "0003_bumpy_norrin_radd",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "5",
+      "when": 1701092435729,
+      "tag": "0004_perpetual_maelstrom",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "5",
+      "when": 1701092992773,
+      "tag": "0005_minor_freak",
+      "breakpoints": true
     }
   ]
 }

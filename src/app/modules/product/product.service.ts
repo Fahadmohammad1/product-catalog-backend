@@ -9,7 +9,13 @@ const createProduct = async (data: IProduct) => {
 };
 
 const getProducts = async () => {
-  const result = await db.query.products.findMany({
+  const result = await db.query.products.findMany({});
+
+  return result;
+};
+
+const getSingleProduct = async () => {
+  const result = await db.query.products.findFirst({
     with: {
       comments: true,
     },
@@ -21,4 +27,5 @@ const getProducts = async () => {
 export const ProductService = {
   createProduct,
   getProducts,
+  getSingleProduct,
 };
