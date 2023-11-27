@@ -5,12 +5,13 @@ const port = process.env.PORT || 5000;
 import { drizzle } from "drizzle-orm/node-postgres";
 import { Client } from "pg";
 import { migrate } from "drizzle-orm/node-postgres/migrator";
+import * as schema from "./db/schema";
 
 const client = new Client({
   connectionString: process.env.URI,
 });
 
-export const db = drizzle(client);
+export const db = drizzle(client, { schema });
 
 async function main() {
   await client.connect();

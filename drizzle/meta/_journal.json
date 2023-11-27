@@ -8,6 +8,20 @@
       "when": 1701017329324,
       "tag": "0000_furry_stingray",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1701083734201,
+      "tag": "0001_dry_blacklash",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1701083951797,
+      "tag": "0002_chief_apocalypse",
+      "breakpoints": true
     }
   ]
 }
