@@ -25,10 +25,14 @@ const login = async (loginData: { email: string; password: string }) => {
     .from(users)
     .where(eq(users.email, loginData.email));
 
-  if (findUser && findUser[0].password !== loginData.password) {
+  if (findUser.length && findUser[0].password !== loginData.password) {
     return { message: "password is incorrect" };
   } else {
-    return { message: "login successfull" };
+    return {
+      message: "login successfull",
+      name: findUser[0].name,
+      email: findUser[0].email,
+    };
   }
 };
 

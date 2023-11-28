@@ -11,20 +11,17 @@ const signUp = async (req: Request, res: Response) => {
   });
 };
 
-//   const login = async (loginData) => {
-//     const findUser = await db
-//       .selectDistinct({ email: loginData.email })
-//       .from(users);
+const login = async (req: Request, res: Response) => {
+  const result = await AuthService.login(req.body);
 
-//     console.log(findUser);
-
-//     // if(findUser.password) {
-
-//     // }
-
-//     // const result = await db.query.users.findFirst({});
-//   };
+  res.send({
+    success: true,
+    message: "Login successfull",
+    data: result,
+  });
+};
 
 export const AuthController = {
   signUp,
+  login,
 };
