@@ -43,6 +43,13 @@
       "when": 1701092992773,
       "tag": "0005_minor_freak",
       "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "5",
+      "when": 1701104240804,
+      "tag": "0006_little_vargas",
+      "breakpoints": true
     }
   ]
 }

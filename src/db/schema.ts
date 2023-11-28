@@ -14,6 +14,8 @@ export const products = pgTable("products", {
   description: text("description"),
   price: integer("price"),
   image: text("image"),
+  category: varchar("category", { length: 200 }),
+  rating: integer("rating"),
   createdAt: timestamp("created_at")
     .notNull()
     .default(sql`now()`),
@@ -35,6 +37,8 @@ export const comments = pgTable("comments", {
   productId: integer("productId")
     .notNull()
     .references(() => users.id),
-  createdAt: timestamp("created_at"),
+  createdAt: timestamp("created_at")
+    .notNull()
+    .default(sql`now()`),
   updatedAt: timestamp("updated_at"),
 });
