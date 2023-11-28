@@ -1,4 +1,4 @@
-import { sql } from "drizzle-orm";
+import { relations, sql } from "drizzle-orm";
 import {
   integer,
   pgTable,
@@ -37,9 +37,20 @@ export const comments = pgTable("comments", {
     .references(() => users.id),
   productId: integer("productId")
     .notNull()
-    .references(() => users.id),
+    .references(() => products.id),
   createdAt: timestamp("created_at")
     .notNull()
     .default(sql`now()`),
   updatedAt: timestamp("updated_at"),
 });
+
+export const commentRelation = relations(comments, ({ one }) => ({
+  user: one(users, {
+    fields: [comments.userId],
+    references: [users.id],
+  }),
+  product: one(products, {
+    fields: [comments.productId],
+    references: [products.id],
+  }),
+}));

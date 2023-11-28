@@ -1,5 +1,5 @@
 import { SQL, and, eq, gte, ilike, like, lte } from "drizzle-orm";
-import { products } from "../../../db/schema";
+import { comments, products } from "../../../db/schema";
 import { db } from "../../../server";
 import { IProduct } from "./product.interface";
 
@@ -49,10 +49,12 @@ const getProducts = async (filtersData: Record<string, unknown>) => {
   return result;
 };
 
-const getSingleProduct = async () => {
-  const result = await db.query.products.findFirst({});
-
-  return result;
+const getSingleProduct = async (id: number) => {
+  return await db
+    .select()
+    .from(products)
+    .where(eq(products.id, id))
+    .leftJoin(comments, eq(products.id, comments.productId));
 };
 
 export const ProductService = {
