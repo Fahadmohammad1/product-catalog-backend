@@ -24,7 +24,8 @@ export const products = pgTable("products", {
 export const users = pgTable("users", {
   id: serial("id").primaryKey(),
   name: varchar("name", { length: 256 }),
-  email: varchar("email"),
+  email: varchar("email").unique(),
+  password: varchar("password"),
   avatar: text("avatar"),
 });
 
